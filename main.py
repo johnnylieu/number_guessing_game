@@ -4,21 +4,20 @@ import os
 def take_a_guess(correct_number, number_of_tries):
     if number_of_tries == 0:
         print("⛔ GAME OVER - You've run out of guesses.")
-        quit()
 
-    user_guess = int(input("Make a guess: "))
+    else:
+        user_guess = int(input("Make a guess: "))
 
-    if user_guess == correct_number:
-        print(f"👍 You got it! The answer was {correct_number} 👍")
-        quit()
-    elif user_guess > correct_number:
-        number_of_tries -= 1
-        print(f"👇 Too high.\nGuess again\nYou have {number_of_tries} remaining to guess the number.")
-        take_a_guess(correct_number, number_of_tries)
-    elif user_guess < correct_number:
-        number_of_tries -= 1
-        print(f"☝️ Too low.\nGuess again\nYou have {number_of_tries} remaining to guess the number.")
-        take_a_guess(correct_number, number_of_tries)
+        if user_guess == correct_number:
+            print(f"👍 You got it! The answer was {correct_number} 👍")
+        if user_guess > correct_number:
+            number_of_tries -= 1
+            print(f"👇 Too high.\nGuess again\nYou have {number_of_tries} remaining to guess the number.")
+            take_a_guess(correct_number, number_of_tries)
+        elif user_guess < correct_number:
+            number_of_tries -= 1
+            print(f"☝️ Too low.\nGuess again\nYou have {number_of_tries} remaining to guess the number.")
+            take_a_guess(correct_number, number_of_tries)
 
 def game():
     num_of_tries = 0
