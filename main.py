@@ -4,7 +4,6 @@ import os
 def take_a_guess(correct_number, number_of_tries):
     if number_of_tries == 0:
         print("⛔ GAME OVER - You've run out of guesses.")
-
     else:
         user_guess = int(input("Make a guess: "))
 
