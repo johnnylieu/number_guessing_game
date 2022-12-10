@@ -2,6 +2,7 @@ from random import randint
 
 def choose_level():
     difficulty_level = (input("Choose a difficulty. Type 'easy' or 'hard': ")).lower()
+    num_of_tries = 0
 
     if difficulty_level == 'easy':
         num_of_tries = 10
@@ -15,10 +16,12 @@ def choose_level():
 
 def take_a_guess(correct_number, number_of_tries):
     user_guess = int(input("Make a guess: "))
-    if user_guess == correct_number:
-        print(f"👍 You got it! The answer was {correct_number} 👍")
-    elif number_of_tries == 0:
+    if number_of_tries == 0:
         print("⛔ GAME OVER - You've run out of guesses.")
+        quit()
+    elif user_guess == correct_number:
+        print(f"👍 You got it! The answer was {correct_number} 👍")
+        quit()
     elif user_guess > correct_number:
         number_of_tries -= 1
         print(f"👇 Too high.\nGuess again\nYou have {number_of_tries} remaining to guess the number.")
@@ -29,8 +32,18 @@ def take_a_guess(correct_number, number_of_tries):
         take_a_guess(correct_number, number_of_tries)
 
 def game():
-    num_of_tries = choose_level()
+    num_of_tries = 0
     rand_num = randint(1,100)
+
+    difficulty_level = (input("Choose a difficulty. Type 'easy' or 'hard': ")).lower()
+
+    if difficulty_level == 'easy':
+        num_of_tries = 10
+    elif difficulty_level == 'hard':
+        num_of_tries = 5
+    else:
+        print("\nYou have entered an invalid choice!")
+        game()
 
     print(f"\nYou have {num_of_tries} attempts remaining to guess the number.")
 
