@@ -2,7 +2,6 @@ from random import randint
 
 def choose_level():
     difficulty_level = (input("Choose a difficulty. Type 'easy' or 'hard': ")).lower()
-    rand_num = randint(1,100)
 
     if difficulty_level == 'easy':
         num_of_tries = 10
@@ -11,6 +10,12 @@ def choose_level():
     else:
         print("\nYou have entered an invalid choice!")
         choose_level()
+
+    return num_of_tries
+
+def game():
+    num_of_tries = choose_level()
+    rand_num = randint(1,100)
 
     print(f"\nYou have {num_of_tries} attempts remaining to guess the number.")
     guess = input("Make a guess: ")
@@ -23,10 +28,10 @@ def choose_level():
 
 def start():
     print("Welcome to the Number Guessing Game!\nI'm Thinking of a number between 1 and 100.")
-
-    choose_level()
+    game()
 
 def main():
     if __name__ == "__main__":
         start()
+
 main()
