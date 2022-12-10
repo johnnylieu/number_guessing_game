@@ -38,7 +38,7 @@ def game():
 
 def main():
     if __name__ == "__main__":
-        print("Welcome to the Number Guessing Game!\nI'm Thinking of a number between 1 and 100.")
+        print("\n🕵️🔢 Welcome to the Number Guessing Game!\nI'm Thinking of a number between 1 and 100.")
         game()
 
 main()
