@@ -36,12 +36,9 @@ def game():
 
     take_a_guess(rand_num, num_of_tries)
 
-def start():
-    print("Welcome to the Number Guessing Game!\nI'm Thinking of a number between 1 and 100.")
-    game()
-
 def main():
     if __name__ == "__main__":
-        start()
+        print("Welcome to the Number Guessing Game!\nI'm Thinking of a number between 1 and 100.")
+        game()
 
 main()
