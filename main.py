@@ -1,4 +1,5 @@
 from random import randint
+import os
 
 def take_a_guess(correct_number, number_of_tries):
     if number_of_tries == 0:
@@ -39,6 +40,7 @@ def game():
 
 def main():
     if __name__ == "__main__":
+        os.system('cls')
         print("\n🕵️  Welcome to the Number Guessing Game!\n🔢 I'm Thinking of a number between 1 and 100.")
         game()
 
