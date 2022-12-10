@@ -17,6 +17,8 @@ def take_a_guess(correct_number, number_of_tries):
     user_guess = int(input("Make a guess: "))
     if user_guess == correct_number:
         print(f"You got it! The answer was {correct_number}")
+    elif number_of_tries == 0:
+        print("GAME OVER - You've run out of guesses.")
     elif user_guess > correct_number:
         number_of_tries -= 1
         print(f"Too high.\nGuess again\nYou have {number_of_tries} remaining to guess the number.")
@@ -25,8 +27,6 @@ def take_a_guess(correct_number, number_of_tries):
         number_of_tries -= 1
         print(f"Too low.\nGuess again\nYou have {number_of_tries} remaining to guess the number.")
         take_a_guess(correct_number, number_of_tries)
-    elif number_of_tries == 0:
-        print("GAME OVER - You've run out of guesses.")
 
 def game():
     num_of_tries = choose_level()
