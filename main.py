@@ -15,11 +15,13 @@ def choose_level():
     return num_of_tries
 
 def take_a_guess(correct_number, number_of_tries):
-    user_guess = int(input("Make a guess: "))
     if number_of_tries == 0:
         print("⛔ GAME OVER - You've run out of guesses.")
         quit()
-    elif user_guess == correct_number:
+
+    user_guess = int(input("Make a guess: "))
+
+    if user_guess == correct_number:
         print(f"👍 You got it! The answer was {correct_number} 👍")
         quit()
     elif user_guess > correct_number:
