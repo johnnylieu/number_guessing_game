@@ -1,19 +1,5 @@
 from random import randint
 
-def choose_level():
-    difficulty_level = (input("Choose a difficulty. Type 'easy' or 'hard': ")).lower()
-    num_of_tries = 0
-
-    if difficulty_level == 'easy':
-        num_of_tries = 10
-    elif difficulty_level == 'hard':
-        num_of_tries = 5
-    else:
-        print("\nYou have entered an invalid choice!")
-        choose_level()
-
-    return num_of_tries
-
 def take_a_guess(correct_number, number_of_tries):
     if number_of_tries == 0:
         print("⛔ GAME OVER - You've run out of guesses.")
