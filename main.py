@@ -13,27 +13,28 @@ def choose_level():
 
     return num_of_tries
 
-def take_a_guess(guess, correct_number, number_of_tries):
-    if guess == correct_number:
+def take_a_guess(correct_number, number_of_tries):
+    user_guess = int(input("Make a guess: "))
+    if user_guess == correct_number:
         print(f"You got it! The answer was {correct_number}")
-    elif guess > correct_number:
+    elif user_guess > correct_number:
         number_of_tries -= 1
         print(f"Too high.\nGuess again\nYou have {number_of_tries} remaining to guess the number.")
-        guess()
-    elif guess < correct_number:
+        take_a_guess(correct_number, number_of_tries)
+    elif user_guess < correct_number:
         number_of_tries -= 1
         print(f"Too low.\nGuess again\nYou have {number_of_tries} remaining to guess the number.")
-        take_a_guess()
+        take_a_guess(correct_number, number_of_tries)
+    elif number_of_tries == 0:
+        print("GAME OVER - You've run out of guesses.")
 
 def game():
     num_of_tries = choose_level()
     rand_num = randint(1,100)
 
     print(f"\nYou have {num_of_tries} attempts remaining to guess the number.")
-    guess = int(input("Make a guess: "))
 
-    take_a_guess(guess, rand_num, num_of_tries)
-        
+    take_a_guess(rand_num, num_of_tries)
 
 def start():
     print("Welcome to the Number Guessing Game!\nI'm Thinking of a number between 1 and 100.")
