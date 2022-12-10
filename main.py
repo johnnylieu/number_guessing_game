@@ -30,9 +30,9 @@ def game():
     rand_num = randint(1,100)
 
     print(f"\nYou have {num_of_tries} attempts remaining to guess the number.")
-    guess = input("Make a guess: ")
+    guess = int(input("Make a guess: "))
 
-    take_a_guess(guess, rand_num, num_of_tries)
+    take_a_guess(guess=guess, correct_number=rand_num, number_of_tries=num_of_tries)
         
 
 def start():
